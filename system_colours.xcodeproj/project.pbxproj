@@ -1,0 +1,99 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXFileReference section */
+		FC053574238DC6B200888D0A /* ui_element_colours.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ui_element_colours.h; sourceTree = "<group>"; };
+		FC053576238DC77F00888D0A /* ui_element_colours_iOS.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ui_element_colours_iOS.mm; sourceTree = "<group>"; };
+		FC053577238DC77F00888D0A /* ui_element_colours_OSX.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ui_element_colours_OSX.mm; sourceTree = "<group>"; };
+		FC756E0A238CEFC600FF33D6 /* system_colours.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = system_colours.h; sourceTree = "<group>"; };
+		FC756E44238D07A200FF33D6 /* system_colours.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = system_colours.cpp; sourceTree = "<group>"; };
+		FC756E47238D971B00FF33D6 /* system_colours.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = system_colours.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		FC053573238DC6B200888D0A /* ui_element_colours */ = {
+			isa = PBXGroup;
+			children = (
+				FC053576238DC77F00888D0A /* ui_element_colours_iOS.mm */,
+				FC053577238DC77F00888D0A /* ui_element_colours_OSX.mm */,
+				FC053574238DC6B200888D0A /* ui_element_colours.h */,
+			);
+			path = ui_element_colours;
+			sourceTree = "<group>";
+		};
+		FC756E08238CEF2E00FF33D6 /* system_colours */ = {
+			isa = PBXGroup;
+			children = (
+				FC756E0A238CEFC600FF33D6 /* system_colours.h */,
+				FC756E44238D07A200FF33D6 /* system_colours.cpp */,
+				FC756E47238D971B00FF33D6 /* system_colours.mm */,
+				FC053573238DC6B200888D0A /* ui_element_colours */,
+			);
+			name = system_colours;
+			sourceTree = "<group>";
+		};
+		FCE4D08E238CE41F0007D783 = {
+			isa = PBXGroup;
+			children = (
+				FC756E08238CEF2E00FF33D6 /* system_colours */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		FCE4D08F238CE41F0007D783 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1120;
+			};
+			buildConfigurationList = FCE4D092238CE41F0007D783 /* Build configuration list for PBXProject "system_colours" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCE4D08E238CE41F0007D783;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		FCE4D093238CE41F0007D783 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		FCE4D094238CE41F0007D783 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCE4D092238CE41F0007D783 /* Build configuration list for PBXProject "system_colours" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCE4D093238CE41F0007D783 /* Debug */,
+				FCE4D094238CE41F0007D783 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FCE4D08F238CE41F0007D783 /* Project object */;
+}
