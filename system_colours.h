@@ -12,7 +12,7 @@
  BEGIN_JUCE_MODULE_DECLARATION
   ID:               system_colours
   vendor:           modosc
-  version:          0.1.0
+  version:          0.2.0
   name:             System Colours
   description:      A module that gives access to native system colours (and colors)
   website:          https://github.com/modosc/system_colours
@@ -29,4 +29,7 @@
 #include <juce_gui_basics/juce_gui_basics.h>
 #include <juce_graphics/juce_graphics.h>
 
+#include "colour_converter/colour_converter.h"
+#include "standard_colours/standard_colours.h"
 #include "ui_element_colours/ui_element_colours.h"
+

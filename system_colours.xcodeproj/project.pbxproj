@@ -13,6 +13,12 @@
 		FC756E0A238CEFC600FF33D6 /* system_colours.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = system_colours.h; sourceTree = "<group>"; };
 		FC756E44238D07A200FF33D6 /* system_colours.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = system_colours.cpp; sourceTree = "<group>"; };
 		FC756E47238D971B00FF33D6 /* system_colours.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = system_colours.mm; sourceTree = "<group>"; };
+		FC86105B238DED14004BB8E5 /* standard_colours_OSX.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = standard_colours_OSX.mm; sourceTree = "<group>"; };
+		FC86105C238DED14004BB8E5 /* standard_colours_iOS.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = standard_colours_iOS.mm; sourceTree = "<group>"; };
+		FC86105D238DED14004BB8E5 /* standard_colours.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = standard_colours.h; sourceTree = "<group>"; };
+		FC86105F238DF225004BB8E5 /* colour_converter_OSX.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = colour_converter_OSX.mm; sourceTree = "<group>"; };
+		FC861060238DF225004BB8E5 /* colour_converter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = colour_converter.h; sourceTree = "<group>"; };
+		FC861061238DF225004BB8E5 /* colour_converter_iOS.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = colour_converter_iOS.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -29,12 +35,34 @@
 		FC756E08238CEF2E00FF33D6 /* system_colours */ = {
 			isa = PBXGroup;
 			children = (
+				FC86105E238DF225004BB8E5 /* colour_converter */,
 				FC756E0A238CEFC600FF33D6 /* system_colours.h */,
 				FC756E44238D07A200FF33D6 /* system_colours.cpp */,
 				FC756E47238D971B00FF33D6 /* system_colours.mm */,
+				FC86105A238DED14004BB8E5 /* standard_colours */,
 				FC053573238DC6B200888D0A /* ui_element_colours */,
 			);
 			name = system_colours;
+			sourceTree = "<group>";
+		};
+		FC86105A238DED14004BB8E5 /* standard_colours */ = {
+			isa = PBXGroup;
+			children = (
+				FC86105B238DED14004BB8E5 /* standard_colours_OSX.mm */,
+				FC86105C238DED14004BB8E5 /* standard_colours_iOS.mm */,
+				FC86105D238DED14004BB8E5 /* standard_colours.h */,
+			);
+			path = standard_colours;
+			sourceTree = "<group>";
+		};
+		FC86105E238DF225004BB8E5 /* colour_converter */ = {
+			isa = PBXGroup;
+			children = (
+				FC86105F238DF225004BB8E5 /* colour_converter_OSX.mm */,
+				FC861060238DF225004BB8E5 /* colour_converter.h */,
+				FC861061238DF225004BB8E5 /* colour_converter_iOS.mm */,
+			);
+			path = colour_converter;
 			sourceTree = "<group>";
 		};
 		FCE4D08E238CE41F0007D783 = {

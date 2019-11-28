@@ -1,125 +1,79 @@
 #pragma once
-// from https://philjordan.eu/article/mixing-objective-c-c++-and-objective-c++
-
-#ifdef __OBJC__
-#define OBJC_CLASS(name) @class name;
-#else
-#define OBJC_CLASS(name) typedef struct objc_object name;
-#endif
-
-#if JUCE_MAC
-#define COLOR_CLASS NSColor
-#elif JUCE_IOS
-#define COLOR_CLASS UIColor
-#endif
-
-OBJC_CLASS(COLOR_CLASS)
-
-// macro to generate color wrapper declarations
-#define DECLARE_WRAPPED_COLOR(name) static juce::Colour name##Colour();
-
-// macro to generate color wrapper method calls
-#define WRAPPED_COLOR(name) juce::Colour UIElementColours::name##Colour() {\
-  return UIElementColours::systemColorToColour([COLOR_CLASS name##Color]);\
-}
-
-// macro to generate color wrapper methods for properties that aren't implemented
-// TODO - can't we do this with objc metaprogramming?
-#define WRAPPED_UNIMPLEMENTED_COLOR(name) juce::Colour UIElementColours::name##Colour() {\
-  DBG("Platform doesn't implement name##Color, returning empty juce::Colour");\
-  return juce::Colour();\
-}
-
-// macro to generate color wrapper methods which depend on specific platform versions
-#if JUCE_MAC
-#define APPLE_OS_NAME macOS
-#elif JUCE_IOS
-#define APPLE_OS_NAME iOS
-#endif
-
-#define WRAPPED_VERSIONED_COLOR(name, version) juce::Colour UIElementColours::name##Colour() {\
-  if (@available(APPLE_OS_NAME version, *)) {\
-    return UIElementColours::systemColorToColour([COLOR_CLASS name##Color]);\
-  } else {\
-    DBG("Platform version doesn't support name, returning empty juce::Colour");\
-    return juce::Colour();\
-  }\
-}
-
 class UIElementColours
 {
 public:
-  static juce::Colour systemColorToColour(COLOR_CLASS *);
+  static juce::LookAndFeel_V4::ColourScheme getSystemColourScheme();
 
   // Common Colors:
 
   // Label Colors
 
   // The color for text labels that contain primary content.
-  DECLARE_WRAPPED_COLOR(label)
+  static juce::Colour labelColour();
+
   // The color for text labels that contain secondary content.
-  DECLARE_WRAPPED_COLOR(secondaryLabel)
+  static juce::Colour secondaryLabelColour();
   // The color for text labels that contain tertiary content.
-  DECLARE_WRAPPED_COLOR(tertiaryLabel)
+  static juce::Colour tertiaryLabelColour();
   // The color for text labels that contain quaternary content..
-  DECLARE_WRAPPED_COLOR(quaternaryLabel)
+  static juce::Colour quaternaryLabelColour();
 
   // Text Colors
 
   // The color to use for placeholder text in controls or text views.
-  DECLARE_WRAPPED_COLOR(placeholderText)
+  static juce::Colour placeholderTextColour();
 
   // Link Color
 
   // The color to use for links.
-  DECLARE_WRAPPED_COLOR(link)
+  static juce::Colour linkColour();
 
   // Separator Colors
 
   // The color to use for separators between different sections of content.
-  DECLARE_WRAPPED_COLOR(separator)
+  static juce::Colour separatorColour();
 
 
   // iOS colors
 
   // An overlay fill color for thin and small shapes.
-  DECLARE_WRAPPED_COLOR(systemFill)
+  static juce::Colour systemFillColour();
   // An overlay fill color for medium-size shapes
-  DECLARE_WRAPPED_COLOR(secondarySystemFill)
+  static juce::Colour secondarySystemFillColour();
   // An overlay fill color for large shapes.
-  DECLARE_WRAPPED_COLOR(tertiarySystemFill)
+  static juce::Colour tertiarySystemFillColour();
   // An overlay fill color for large areas that contain complex content.
-  DECLARE_WRAPPED_COLOR(quaternarySystemFill)
+  static juce::Colour quaternarySystemFillColour();
 
   // Standard Content Background Colors
 
   // The color for the main background of your interface.
-  DECLARE_WRAPPED_COLOR(systemBackground)
+  static juce::Colour systemBackgroundColour();
   // The color for content layered on top of the main background.
-  DECLARE_WRAPPED_COLOR(secondarySystemBackground)
+  static juce::Colour secondarySystemBackgroundColour();
   // The color for content layered on top of secondary backgrounds.
-  DECLARE_WRAPPED_COLOR(tertiarySystemBackground)
+  static juce::Colour tertiarySystemBackgroundColour();
 
   // Grouped Content Background Colors
 
   // The color for the main background of your grouped interface.
-  DECLARE_WRAPPED_COLOR(systemGroupedBackground)
+  static juce::Colour systemGroupedBackgroundColour();
   // The color for content layered on top of the main background of your grouped interface.
-  DECLARE_WRAPPED_COLOR(secondarySystemGroupedBackground)
+  static juce::Colour secondarySystemGroupedBackgroundColour();
   // The color for content layered on top of secondary backgrounds of your grouped interface.
-  DECLARE_WRAPPED_COLOR(tertiarySystemGroupedBackground)
+  static juce::Colour tertiarySystemGroupedBackgroundColour();
 
   // Separator Colors
 
   // The color for borders or divider lines that hides any underlying content.
-  DECLARE_WRAPPED_COLOR(opaqueSeparator)
+  static juce::Colour opaqueSeparatorColour();
 
   // Nonadaptable Colors
 
   // The nonadaptable system color for text on a light background.
-  DECLARE_WRAPPED_COLOR(darkText)
+  static juce::Colour darkTextColour();
   // The nonadaptable system color for text on a dark background.
-  DECLARE_WRAPPED_COLOR(lightText)
+  static juce::Colour lightTextColour();
 
 
   // MacOS Colors
@@ -127,83 +81,83 @@ public:
   // Text Colors
 
   // The color to use for text.
-  DECLARE_WRAPPED_COLOR(text)
+  static juce::Colour textColour();
   // The color to use for selected text.
-  DECLARE_WRAPPED_COLOR(selectedText)
+  static juce::Colour selectedTextColour();
   // The color to use for the background area behind text.
-  DECLARE_WRAPPED_COLOR(textBackground)
+  static juce::Colour textBackgroundColour();
   // The color to use for the background of selected text.
-  DECLARE_WRAPPED_COLOR(selectedTextBackground)
+  static juce::Colour selectedTextBackgroundColour();
   // The color to use for the keyboard focus ring around controls.
-  DECLARE_WRAPPED_COLOR(keyboardFocusIndicator)
+  static juce::Colour keyboardFocusIndicatorColour();
   // The color to use for selected text in an unemphasized context.
-  DECLARE_WRAPPED_COLOR(unemphasizedSelectedText)
+  static juce::Colour unemphasizedSelectedTextColour();
   // The color to use for the text background in an unemphasized context.
-  DECLARE_WRAPPED_COLOR(unemphasizedSelectedTextBackground)
+  static juce::Colour unemphasizedSelectedTextBackgroundColour();
 
   // Content Colors
 
   // The color to use for the background of selected and emphasized content.
-  DECLARE_WRAPPED_COLOR(selectedContentBackground)
+  static juce::Colour selectedContentBackgroundColour();
   // The color to use for selected and unemphasized content.
-  DECLARE_WRAPPED_COLOR(unemphasizedSelectedContentBackground)
+  static juce::Colour unemphasizedSelectedContentBackgroundColour();
 
   // Menu Colors
 
   // The color to use for the text in menu items.
-  DECLARE_WRAPPED_COLOR(selectedMenuItemText)
+  static juce::Colour selectedMenuItemTextColour();
 
   // Table Colors
 
   // The color to use for the optional gridlines, such as those in a table view.
-  DECLARE_WRAPPED_COLOR(grid)
+  static juce::Colour gridColour();
   // The color to use for text in header cells in table views and outline views.
-  DECLARE_WRAPPED_COLOR(headerText)
+  static juce::Colour headerTextColour();
 
   // TODO - how to implement this?
-  // DECLARE_WRAPPED_COLOR(alternatingContentBackgroundColors);
+  // static juce::Colour alternatingContentBackgroundColorsColour();;
   // The colors to use for alternating content, typically found in table views and collection views.
 
   // Control Colors
 
   // The user's current accent color preference.
-  DECLARE_WRAPPED_COLOR(controlAccent)
+  static juce::Colour controlAccentColour();
   // The color to use for the flat surfaces of a control.
-  DECLARE_WRAPPED_COLOR(control)
+  static juce::Colour controlColour();
   // The color to use for the background of large controls, such as scroll views or table views.
-  DECLARE_WRAPPED_COLOR(controlBackground)
+  static juce::Colour controlBackgroundColour();
   // The color to use for text on enabled controls.
-  DECLARE_WRAPPED_COLOR(controlText)
+  static juce::Colour controlTextColour();
   // The color to use for text on disabled controls.
-  DECLARE_WRAPPED_COLOR(disabledControlText)
+  static juce::Colour disabledControlTextColour();
   // The current system control tint color.
-  // DECLARE_WRAPPED_COLOR(currentControlTint)
+  // static juce::Colour currentControlTintColour();
   // The color to use for the face of a selected control—that is, a control that has been clicked or is being dragged.
-  DECLARE_WRAPPED_COLOR(selectedControl)
+  static juce::Colour selectedControlColour();
   // The color to use for text in a selected control—that is, a control being clicked or dragged.
-  DECLARE_WRAPPED_COLOR(selectedControlText)
+  static juce::Colour selectedControlTextColour();
   // The color to use for text in a selected control.
-  DECLARE_WRAPPED_COLOR(alternateSelectedControlText)
+  static juce::Colour alternateSelectedControlTextColour();
   // The patterned color to use for the background of a scrubber control.
-  DECLARE_WRAPPED_COLOR(scrubberTexturedBackground)
+  static juce::Colour scrubberTexturedBackgroundColour();
 
   // Window Colors
 
   // The color to use for the window background.
-  DECLARE_WRAPPED_COLOR(windowBackground)
+  static juce::Colour windowBackgroundColour();
   // The color to use for text in a window's frame.
-  DECLARE_WRAPPED_COLOR(windowFrameText)
+  static juce::Colour windowFrameTextColour();
   // The color to use in the area beneath your window's views.
-  DECLARE_WRAPPED_COLOR(underPageBackground)
+  static juce::Colour underPageBackgroundColour();
 
   // Highlights and Shadows
 
   // The highlight color to use for the bubble that shows inline search result values.
-  DECLARE_WRAPPED_COLOR(findHighlight)
+  static juce::Colour findHighlightColour();
   // The color to use as a virtual light source on the screen.
-  DECLARE_WRAPPED_COLOR(highlight)
+  static juce::Colour highlightColour();
   // The color to use for virtual shadows cast by raised objects on the screen.
-  DECLARE_WRAPPED_COLOR(shadow)
+  static juce::Colour shadowColour();
 };
 
 
