@@ -9,7 +9,7 @@ and `juce::Colour`.
 
 ### StandardColours
 provides static methods to access the standard colors from
-[macos](https://developer.apple.com/documentation/appkit/nscolor/standard_colors?language=objc))
+[macos](https://developer.apple.com/documentation/appkit/nscolor/standard_colors?language=objc)
 and [ios](https://developer.apple.com/documentation/uikit/uicolor/standard_colors?language=objc)
 
 ### UIElementColors
