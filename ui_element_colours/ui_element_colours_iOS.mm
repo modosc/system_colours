@@ -16,7 +16,7 @@
 }
 
 #define WRAPPED_VERSIONED_UI_ELEMENT_COLOR(name, version) juce::Colour UIElementColours::name##Colour() {\
-  if (@available(macOS version, *)) {\
+  if (@available(iOS version, *)) {\
     return ColourConverter::convert([COLOR_CLASS name##Color]);\
   } else {\
     DBG("Platform version doesn't support name, returning empty juce::Colour");\

@@ -1,0 +1,51 @@
+# MacOS
+
+all samples done with digital color meter and transparency disabled
+
+# dark mode manual sample
+
+1e - menu background on left / control background  / text background
+28 - under page background  / alternating content background
+2d - menu bar without focus
+32 - window background
+34 - label4, separator, grid
+35..41 - menu bar with focus
+38 - tab container background
+3e - tab window background
+46 - highlighted menu bar item without focus / unemphasized selected text background
+55 - label3 / placeholdertext / control / disabled control (text)
+6a - inactive buttons
+9c - active button without focus
+98989d - system gray (maybe active button w/o focus?)
+99 - label2
+dc - window frame text / selected control text
+e3 - label1
+ff - selected menu item  / alternate selected menu item  / header / text / selected text / unemphasized selected text
+
+
+light mode manual sample
+
+menu bar is gradient from e5 to d0
+
+00 - text / selected text
+21 - label1
+27 - control text /  header text / selected control text / window frame text
+80 - label2
+8e8e92 - system gray
+a1 - under page background / alternating content background
+c0 - disabled control (text) / label3 / placeholdertext
+cc - grid
+da - tab window background
+dc - highlighted menu bar item without focus / unemphasized selected text background
+e3 - tab container background
+e5 - active button without focus
+e5..d0 - menu bar with focus
+e6 - label4, separator
+ec - window background
+f6 - menu bar without focus
+ff - control color, inactive buttons, menu background on left / control
+background color / text background color, selected menu item , alternate selected menu item
+
+
+# iOS
+https://noahgilmore.com/blog/dark-mode-uicolor-compatibility/
